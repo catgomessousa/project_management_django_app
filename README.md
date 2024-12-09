@@ -25,7 +25,7 @@ A user-friendly production planning tool that dynamically generates a Gantt char
 
 ### Prerequisites
 
-- **Python 2.7**
+- **Python 3.8**
 - **Node.js & Yarn**
 
 ### Installation

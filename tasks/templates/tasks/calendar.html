@@ -1,0 +1,12 @@
+{% extends 'tasks/base.html' %}
+
+{% block content %}
+<div class="clearfix">
+    <a class="btn btn-info left mr-2" href="{% url 'programa-encomendas' %}"><i class="fa fa-list" aria-hidden="true"></i> Encomendas </a>
+    <a class="btn btn-info left mr-2" href="{% url 'programa-inserir' %}"> <i class="fa fa-plus-circle" aria-hidden="true"></i> Nova Encomenda </a>
+
+	<a class="btn btn-info right mr-2" href="{% url 'calendar' %}?{{ next_month }} ">Próximo mês <i class="fas fa-arrow-circle-right"></i> </a>
+    <a class="btn btn-info right mr-2" href="{% url 'calendar' %}?{{ prev_month }}"> <i class="fas fa-arrow-circle-left"></i> Mês anterior </a>
+</div>
+{{ calendar }}
+{% endblock %}

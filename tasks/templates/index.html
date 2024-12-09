@@ -1,0 +1,90 @@
+
+{% extends 'tasks/base.html' %}
+
+{% block content %}
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <link rel="stylesheet" href="{{MEDIA_URL}}dist/app.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  </head>
+  <body>
+
+
+  <section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-one-third">
+                <div class="card bg-light mb-3">
+                    <div class="card card-body" style="width: 100rem;">
+                        <h5 class="card-title">ENCOMENDAS</h5>
+                        <table class="table table-sm">
+                            <tr>
+                                <th>OF</th>
+                                <th>Descrição</th>
+                                <th>Entrega</th>
+                                <th>Quant</th>
+                            </tr>
+
+                                {%for p in projects %}
+                                        <tr>
+                                            <td><a class="btn-sm btn-info" {% if p.id == id|add:0 %} class="is-active" {%endif%} href="?id={{p.id}}">{{p.ordem_fabrico}}</a></td>
+                                            <td>{{p.resumo}}</td>
+                                            <td>{{p.data_entrega }}</td>
+                                            <td>{{p.quantidade}}</td>
+                                        </tr>
+                                {% endfor %}
+                        </table>
+
+                        <hr>
+
+                    </div>
+                </div>
+            </div>
+            {% if tasks_count %}
+            <div class="column is-10">
+               
+
+                <div class="tabs  is-centered is-toggle">
+                    <ul>
+                        <li  class="change">
+                            <a onclick="change(this)">Day</a>
+                        </li>
+                        <li  class="change">
+                            <a onclick="change(this)">Week</a>
+                        </li>
+                        <li  class="change">
+                            <a onclick="change(this)">Month</a>
+                        </li>
+                    </ul>
+                    <ul class="tabs is-small">
+                   
+                        <li class="">
+                            <a  href="{% url 'programa-planear' id %}">
+                                <span class="icon is-small"><i class="fas fa-edit" aria-hidden="true"></i></span>
+                            Edit</a>
+                        </li>
+
+                    </ul>
+                </div>
+                  <div id="gantt" ></div>
+            </div>
+            {% endif %}
+        </div>
+   </div>
+  </section>
+
+  <script type="text/javascript">
+      
+       var tasks ={{tasks|safe}};
+
+
+  </script>
+<script defer src="{{MEDIA_URL}}dist/app.js"></script>
+  </body>
+</html>
+
+{% endblock content %}

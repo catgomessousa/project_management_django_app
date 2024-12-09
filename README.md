@@ -33,7 +33,7 @@ A user-friendly production planning tool that dynamically generates a Gantt char
 1. **Clone the Repository:**
    ```bash
    git clone https://github.com/catgomessousa/project_management_django_app.git
-   cd your-repo
+   cd project_management_django_app
 2. **Set Up Python Dependencies:**
    ```bash
    pip install -r requirements.txt

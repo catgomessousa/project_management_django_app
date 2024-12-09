@@ -1,5 +1,6 @@
-django
+django == 3.1
 django-treebeard
 https://github.com/zodman/django-model-to-dict/archive/master.zip
 django-bsync
+django-crispy-forms
 

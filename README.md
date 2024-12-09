@@ -15,6 +15,11 @@ A user-friendly production planning tool that dynamically generates a Gantt char
 
 ![admin](https://i.imgur.com/CF4QnXU.png)
 
+![screen1](./screenshots/screenshot1.png)
+
+![screen2](./screenshots/screenshot2.png)
+
+
 
 ## How to run
 
